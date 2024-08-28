@@ -8,7 +8,35 @@
     <title>EJS</title>
 </head>
 <body>
-    <h1>hey <%= 2+2+2 %></h1>
+    <!-- <h1>welcome</h1> -->
+     <div class="main w-full min-h-screen bg-zinc-900">
+        <div class="form p-10 text-white">
+            <form action="/create" method="post">
+                <input    class="block w-full outline-none  px-5 py-2 bg-zinc-800" type="text" placeholder="title goes here.." name="title" />
+                <textarea class=" mt-2 w-full outline-none  block px-5 py-2 resize-none bg-zinc-800" name="" id="" placeholder="write your task details here...." name="details"></textarea>
+                <input class="mt-2 bg-blue-600 px-5 py-2 rounded-md" type="submit" value="create Task">
+            </form>
+        </div>
+        <div class="tasks flex gap-3 flex-wrap p-10">
+            <% if(files.length>0){%>
+              <%  files.forEach(function(val){ %>
+          <%  }) %>
+            <% files.forEach(function(val){%>
+                <div class="task w-72  px-3 py-4 rounded-md bg-zinc-800">
+                    <h1 class="text-white text-3xl tracking-tighter">Some taks read here</h1>
+                    <a class="text-blue-500 inline-block mt-3" href="">Read more</a>
+                </div>
+              
+
+          <%  }) %> 
+          <% } else {%>
+
+            <h3 class="text-zinc-600">No tasks yet..</h3>
+
+         <% } %>
+            
+        </div>
+     </div>
     
 
 
